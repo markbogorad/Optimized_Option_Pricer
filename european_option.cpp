@@ -11,18 +11,18 @@
 #include "pricing_methods.hpp"
 
 european_option::european_option()
-    : option(1), strike(0), maturity(0), spot(0), rate(0), volatility(0) {}
+    : spot(0), strike(0), rate(0), maturity(0), volatility(0), cost_of_carry(0), option(1) {}
 
-european_option::european_option(double K, double T, double S, double r, double sig, double b, int option_type)
-    : strike(K), maturity(T), spot(S), rate(r), volatility(sig), cost_of_carry(b), option(option_type) {
+european_option::european_option(double S, double K, double r, double T, double sig, double b, int option_type)
+    : spot(S), strike(K), rate(r), maturity(T), volatility(sig), cost_of_carry(b), option(option_type) {
     this->option_type = option_type;
 }
 
 double european_option::price() const {
     if (option_type == CALL) {
-        return pricer.price_european_call(strike, maturity, spot, rate, volatility, cost_of_carry);
+        return pricer.price_european_call(spot, strike, rate, maturity, volatility, cost_of_carry);
     } else if (option_type == PUT) {
-        return pricer.price_european_put(strike, maturity, spot, rate, volatility, cost_of_carry);
+        return pricer.price_european_put(spot, strike, rate, maturity, volatility, cost_of_carry);
     } else {
         throw std::domain_error("Select 1 for call or 2 for put");
     }
@@ -32,47 +32,55 @@ void european_option::toggle() {
     option_type = (option_type == CALL) ? PUT : CALL;
 }
 
+// Put-Call Parity methods
+double european_option::pcp_call_price(double put_price) const {
+    return pricer.PCP_put_to_call(spot, strike, rate, maturity, put_price);
+}
 
-/*
-// Option Price
-double EuropeanOption::Price() const {
-    // Sanity check
-    if (S <= 0 || K <= 0 || sigma <= 0 || T <= 0) {
-        throw std::domain_error("Invalid input: All input values must be positive.");
-    }
-    // Then point to BSPricer to calculate the price
-    if (option_type == 1) {
-        return BS->CallPrice(S, K, r, T, sigma, b, option_type);
-    } else if (option_type == 2) {
-        return BS->PutPrice(S, K, r, T, sigma, b, option_type);
-    }
-    else {
-        throw std::domain_error("Select 1 for call 2 for put"); // Throw error if neither 1 or 2 is selected
+double european_option::pcp_put_price(double call_price) const {
+    return pricer.PCP_call_to_put(spot, strike, rate, maturity, call_price);
+}
+
+bool european_option::pcp_check(double call_price, double put_price) const {
+    return pricer.PCP_check(spot, strike, rate, maturity, call_price, put_price);
+}
+
+// Greeks
+double european_option::delta() const {
+    if (option_type == CALL) {
+        return pricer.delta_call(spot, strike, rate, maturity, volatility, cost_of_carry);
+    } else if (option_type == PUT) {
+        return pricer.delta_put(spot, strike, rate, maturity, volatility, cost_of_carry);
+    } else {
+        throw std::domain_error("Select 1 for call or 2 for put");
     }
 }
 
-double EuropeanOption::PCP_Price() const {
-    // Sanity check
-    if (S <= 0 || K <= 0 || sigma <= 0 || T <= 0) {
-        throw std::domain_error("Invalid input: All input values must be positive.");
-    }
 
-     // Calculate call and put prices directly using BSPricer. Needed 
-    double c = BS->CallPrice(S, K, r, T, sigma, b, option_type);
-    double p = BS->PutPrice(S, K, r, T, sigma, b, option_type);
+double european_option::gamma() const {
+    return pricer.gamma(spot, strike, rate, maturity, volatility, cost_of_carry);
+}
 
-    // Use put-call parity to check or calculate the other price
-    // Assuming option_type indicates which price to return based on PCP
-    if (option_type == 1) {
-        // Calculate and return put price from known call price using PCP formula
-        return BS->PCP_CallPrice(S, K, r, T, p);
-    } else if (option_type == 2) {
-        // Calculate and return call price from known put price using PCP formula
-        return BS->PCP_PutPrice(S, K, r, T, c);
-    }
-    else {
-        throw std::domain_error("Select 1 for call 2 for put");
+double european_option::vega() const {
+    return pricer.vega(spot, strike, rate, maturity, volatility, cost_of_carry);
+}
+
+double european_option::theta() const {
+    if (option_type == CALL) {
+        return pricer.theta_call(spot, strike, rate, maturity, volatility, cost_of_carry);
+    } else if (option_type == PUT) {
+        return pricer.theta_put(spot, strike, rate, maturity, volatility, cost_of_carry);
+    } else {
+        throw std::domain_error("Select 1 for call or 2 for put");
     }
 }
 
-*/
+double european_option::rho() const {
+     if (option_type == CALL) {
+        return pricer.rho_call(spot, strike, rate, maturity, volatility, cost_of_carry);
+    } else if (option_type == PUT) {
+        return pricer.rho_put(spot, strike, rate, maturity, volatility, cost_of_carry);
+    } else {
+        throw std::domain_error("Select 1 for call or 2 for put");
+    }
+}

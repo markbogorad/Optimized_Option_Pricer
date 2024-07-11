@@ -3,7 +3,6 @@
 // 
 // American Option implementation
 //
-// @file EuropeanOption.hpp
 // @author Mark Bogorad
 // @version 1.0 
 
