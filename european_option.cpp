@@ -1,9 +1,7 @@
 // european_option.cpp
-// Level 9 Group A
 // 
 // Implementation of European Option class
 //
-// @file Option.hpp
 // @author Mark Bogorad
 // @version 2.0 
 

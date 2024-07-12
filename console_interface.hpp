@@ -1,3 +1,10 @@
+// console_interface.hpp
+// 
+// Allows for user to enter option parameters via console
+//
+// @author Mark Bogorad
+// @version 1.0 
+
 #ifndef CONSOLE_INTERFACE_HPP
 #define CONSOLE_INTERFACE_HPP
 

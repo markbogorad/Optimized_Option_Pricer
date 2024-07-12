@@ -1,3 +1,10 @@
+// console_interface.hpp
+// 
+// Implementation of console parameter input interface
+//
+// @author Mark Bogorad
+// @version 1.0 
+
 #include "console_interface.hpp"
 #include <iostream>
 #include <memory> // For smart pointers

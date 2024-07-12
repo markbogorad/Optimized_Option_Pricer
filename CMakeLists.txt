@@ -10,6 +10,9 @@ american_option.cpp
 asian_option.cpp
 pricing_methods.cpp
 console_interface.cpp
+hardcoded_interface.cpp
+file_interface.cpp
+matrix_interface.cpp
 main.cpp
 )
 # Set the output directory for the executable to be the same as CMakeLists.txt

@@ -2,7 +2,6 @@
 // 
 // European Options: derived from option abstract base class.
 //
-// @file european_option.hpp
 // @author Mark Bogorad
 // @version 2.0 
 
