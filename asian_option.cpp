@@ -3,7 +3,7 @@
 // Implementation of asian_option. Priced using a monte-carlo simulation to get average price under a random walk (in pricing_methods)
 //
 // @author Mark Bogorad
-// @version 2.0 
+// @version 1.0 
 
 #include "asian_option.hpp"
 #include <cmath>

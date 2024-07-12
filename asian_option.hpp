@@ -1,4 +1,4 @@
-// AsianOption.hpp
+// asian_option.hpp
 // 
 // asian_option header file, derived from option base class
 //
@@ -26,8 +26,8 @@ private:
     double volatility;
     double maturity;
     double cost_of_carry;
-    int n_simulations;
-    int n_time_steps;
+    int n_simulations; // simulations for Monte-Carlo pricing
+    int n_time_steps; // time steps for Monte-Carlo
     pricing_methods pricer;
 };
 
