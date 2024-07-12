@@ -93,10 +93,10 @@ bool pricing_methods::PCP_check(double S, double K, double r, double T, double c
 
     bool ParityHolds = std::abs(LHS - RHS) < Tolerance;
     if (ParityHolds) {
-        std::cout << "Put-Call Parity Holds" << std::endl;
+        std::cout << "Put-Call Parity holds." << std::endl;
         return true;
     } else {
-        std::cout << "Put-Call Parity doesn't hold!!" << std::endl;
+        std::cout << "Put-Call Parity doesn't hold." << std::endl;
         return false;
     }
 }

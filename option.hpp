@@ -2,7 +2,6 @@
 // 
 // Serves as the base class for different option types, defining pure virtual pricing and toggle functions as well as the variable capturing option type.
 // 
-// @file Option.hpp
 // @author Mark Bogorad
 // @version 2.0 
 
