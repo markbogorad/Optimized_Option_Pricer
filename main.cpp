@@ -12,7 +12,7 @@ int main() {
     ci.display_results();
     return 0;
 }
-*/
+
 
 #include "hardcoded_interface.hpp"
 int main() {
@@ -20,7 +20,7 @@ int main() {
     hi.display_results();
     return 0;
 }
-
+*/
 /*
 #include "file_interface.hpp"
 int main() {
@@ -28,12 +28,11 @@ int main() {
     fi.display_results();
     return 0;
 }
-
+*/
 #include "matrix_interface.hpp"
 
 int main() {
-    matrix_interface mi("spot", 100.0, 120.0, 1.0); // Vary "spot" from 100 to 120 with a step size of 5
+    matrix_interface mi("spot", 58.0, 68.0, 1.0); // Vary "spot" from 58 to 68 with a step size of 1
     mi.display_results();
     return 0;
 }
-*/

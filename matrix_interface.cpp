@@ -13,14 +13,14 @@
 matrix_interface::matrix_interface(const std::string& variable_to_vary, double begin, double end, double h) 
     : variable_to_vary(variable_to_vary) {
     // Hardcoded values for other parameters
-    spot = 110.0;
-    strike = 100.0;
-    rate = 0.1;
-    volatility = 0.1;
-    maturity = 1.0; // 1 year
-    cost_of_carry = 0.02;
-    option_type = 2; // 1: European, 2: American, 3: Asian
-    call_put_type = 1; // 1: Call, 2: Put
+    spot = 60.0;
+    strike = 65.0;
+    rate = 0.08;
+    volatility = 0.30;
+    maturity = 0.25; // 1 year
+    cost_of_carry = 0.08;
+    option_type = 1; // 1: European, 2: American, 3: Asian
+    call_put_type = 2; // 1: Call, 2: Put
     nSimulations = 10000;
     nTimeSteps = 252;
 
@@ -106,11 +106,11 @@ void matrix_interface::print_results_matrix() {
     } else { // European and Asian options
         std::cout << std::setw(15) << "Varying Value" 
                   << std::setw(15) << "Option Price" 
-                  << std::setw(10) << "Delta" 
-                  << std::setw(10) << "Gamma" 
-                  << std::setw(10) << "Vega" 
-                  << std::setw(10) << "Theta" 
-                  << std::setw(10) << "Rho" 
+                  << std::setw(15) << "Delta" 
+                  << std::setw(15) << "Gamma" 
+                  << std::setw(15) << "Vega" 
+                  << std::setw(15) << "Theta" 
+                  << std::setw(15) << "Rho" 
                   << std::setw(15) << "PCP Price" 
                   << std::endl;
         for (const auto& row : results_matrix) {
