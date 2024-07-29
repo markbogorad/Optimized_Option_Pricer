@@ -1,0 +1,10 @@
+option_type: 1
+call_put_type: 2
+spot: 60.0
+strike: 65.0
+rate: 0.08
+volatility: 0.30
+maturity: 0.25
+cost_of_carry: 0.08
+nSimulations: 10000
+nTimeSteps: 252
