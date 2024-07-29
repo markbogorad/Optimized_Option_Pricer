@@ -4,14 +4,16 @@
 //
 // @author Mark Bogorad
 // @version 1.0 
-/*
+
+
 #include "console_interface.hpp"
 int main() {
     console_interface ci;
     ci.display_results();
     return 0;
 }
-*/
+
+
 /*
 #include "hardcoded_interface.hpp"
 int main() {
@@ -19,7 +21,6 @@ int main() {
     hi.display_results();
     return 0;
 }
-*/
 
 #include "file_interface.hpp"
 int main() {
@@ -28,8 +29,6 @@ int main() {
     return 0;
 }
 
-
-/*
 #include "matrix_interface.hpp"
 
 int main() {
