@@ -31,8 +31,8 @@ Watch the full demo of the project:
 
 ## **Features**
 - **Pricing Models**:
-  - European and American perpetual options priced via Black-Scholes and numerical methods.
-  - Asian options priced using advanced simulations.
+  - European and American perpetual options priced via Black-Scholes closed form solutions.
+  - Asian options priced using Monte-Carlo simulations.
 - **Interfaces**:
   - Multiple user interfaces for flexibility in input handling and interaction.
 - **Optimizations**:
