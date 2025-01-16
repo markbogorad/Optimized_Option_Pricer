@@ -5,13 +5,12 @@
 
 ![C++](https://img.shields.io/badge/C++-20-blue)
 ![CMake](https://img.shields.io/badge/CMake-3.20%2B-green)
-![Monte Carlo](https://img.shields.io/badge/Monte%20Carlo-Simulation-yellow)
-![Numerical Methods](https://img.shields.io/badge/Numerical%20Methods-Crank--Nicolson-orange)
+![Boost](https://img.shields.io/badge/Boost-Library-orange)
 
 ---
 
 ## **About**  
-An advanced C++ application for option pricing, building on previous work to enhance speed, modularity, and scalability. This project supports European, American, and Asian options using the Black-Scholes model, numerical methods, and Monte Carlo simulations. It includes four user interfaces and is designed for performance and precision in option valuation.  
+An advanced C++ application for option pricing, building on previous work to enhance speed, modularity, and scalability. This project supports European, American, and Asian options using the Black-Scholes model and numerical methods. It includes four user interfaces and leverages the **Boost Library** for enhanced functionality and efficiency.
 
 ---
 
@@ -33,12 +32,12 @@ Watch the full demo of the project:
 ## **Features**
 - **Pricing Models**:
   - European and American perpetual options priced via Black-Scholes and numerical methods.
-  - Asian options priced using Monte Carlo simulations for average price movement replication.
+  - Asian options priced using advanced simulations.
 - **Interfaces**:
   - Multiple user interfaces for flexibility in input handling and interaction.
 - **Optimizations**:
   - Modular design for improved maintainability and scalability.
-  - Focus on performance, leveraging efficient algorithms and data structures.
+  - Integration with the **Boost Library** for enhanced performance and data handling.
 
 ---
 
@@ -48,7 +47,7 @@ Watch the full demo of the project:
 - **Interfaces**:
   - Includes console-based and file-based interaction for user inputs and outputs.
 - **Numerical Methods**:
-  - Implements Crank-Nicolson and other techniques for solving partial differential equations.
+  - Implements efficient techniques for solving pricing equations.
 
 ---
 
@@ -75,12 +74,13 @@ Watch the full demo of the project:
 ### **Requirements**
 - **C++ Compiler**: C++20 or later.
 - **CMake**: Version 3.20 or later.
+- **Boost Library**: Installed and available at `/usr/local/opt/boost/include`.
 
 ---
 
 ## **Future Improvements**
 1. Extend support for additional exotic options like Barrier and Lookback options.
-2. Optimize Monte Carlo simulations for multi-threaded environments.
+2. Optimize computations for multi-threaded environments.
 3. Implement GPU-based acceleration for faster numerical computations.
 
 ---
