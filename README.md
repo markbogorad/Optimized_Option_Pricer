@@ -5,7 +5,7 @@
 
 ![C++](https://img.shields.io/badge/C++-20-blue)
 ![CMake](https://img.shields.io/badge/CMake-3.20%2B-green)
-![Boost](https://img.shields.io/badge/Boost-Library-orange)
+![Library](https://img.shields.io/badge/Boost-Library-orange)
 
 ---
 
